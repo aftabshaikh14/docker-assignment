@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    container_name: compose-app
+    ports:
+      - "3001:3000"
+    volumes:
+      - app-data:/app/data
+    networks:
+      - app-network
+
+volumes:
+  app-data:
+
+networks:
+  app-network:
+    driver: bridge
